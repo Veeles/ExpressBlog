@@ -2,6 +2,10 @@
     margin: 0px;
     padding: 0px;
 }
+html {
+    min-height: 100vh;
+    position: relative;
+}
 
 .navbar {
     background-color: burlywood;
@@ -31,4 +35,14 @@
     font-size: 20px;
     color: inherit;
     text-decoration: none;
+}
+
+.footer {
+    background-color: burlywood;
+    display: flex;
+    padding: 10px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    justify-content: center;
 }
