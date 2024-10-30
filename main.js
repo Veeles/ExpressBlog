@@ -17,8 +17,12 @@ function addPost(title, description){
 }
 
 app.get('/', (req,res) => {
-    res.render('main.ejs');
-    console.log(posts)
+    if (posts.length > 0){
+        res.render('main.ejs', {posts:posts});
+    } else {
+        res.render('main.ejs')
+    }
+    console.log(posts[0])
 });
 
 app.get('/contact', (req, res) => {

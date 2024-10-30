@@ -5,10 +5,27 @@
         <form action="/add" method="get">
             <button class="add-post" name="add" type="submit">Add Post</button>
         </form>
+        
     </div>
+    <container class="posts">
+
+    </container>
+    <form class="button">
+        <button id="edit_button">Dupa</button>
+    </form>
+    <form class="button">    
+        <button id="delete_button">Dupa</button>
+    </form>
     <div class="blog-body">
-        <h3>Title</h3>
-        <p>Description</p>
+        <% if (locals.posts) {
+            for(i=0;i < posts.length; i++) {%>
+        
+        <h3><%=posts[i]['title'] %></h3>
+        <p><%= posts[i]['description'].slice(0,100) %> ...</p>
+        <% } 
+        }else {%>
+        <h3>Oops! We don’t have any posts. You must write one! Press the button on the right!</h3>
+        <% }%>
     </div>
 </div>
 
