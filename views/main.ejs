@@ -16,17 +16,20 @@
                 
                 <h3 style="margin-top: 10px; "><%=posts[i]['title'] %></h3>
                 <p><%= posts[i]['description'].slice(0,100) %> ...</p>
-                <form class="button">
-                    <button id="edit_button">Update</button>
+                <form class="button" action="/test" method="post">
+                    <button id="edit_button" value="<%= posts[i]['id']%>" name="updateButton">Update</button>
                 </form>
-                <form class="button">    
-                    <button id="delete_button">Delete</button>
+                <form class="button" action="/post/delete" method="post">    
+                    <button id="delete_button" name="deleteButton" value="<%= posts[i]['id'] %>">Delete</button>
                 </form>
                 <h1 style="border-top: 1px solid; margin-top: 2px;"></h1>
                 <% } 
                 }else {%>
-                <h3>Oops! We don’t have any posts. You must write one! Press the button on the right!</h3>
+                <h2>Oops! We don’t have any posts. You must write one! Press the button on the right!</h2>
+                <h1 style="border-top: 1px solid; margin-top: 15px;"></h1>
+
                 <% }%>
+
             </div>
         </div>
     </div>

@@ -43,6 +43,13 @@ app.post('/add/post', (req, res) => {
     res.redirect('/');
 });
 
+app.post('/post/delete', (req,res) => {
+    let id = req.body['deleteButton'] - 1
+    posts.splice(id)
+    res.redirect('/')
+    
+})
+
 app.listen(port, (err) => {
     if (err) console.log(err);
     console.log('Serwer is listening of port ', port);
