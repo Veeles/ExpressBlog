@@ -222,3 +222,14 @@ p.about {
 #delete_button{
     background-color: red;
 }
+.container1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.description{
+    width: 50%;
+    padding: 10px;
+    overflow-wrap: break-word;
+}

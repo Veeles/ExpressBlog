@@ -1,0 +1,11 @@
+<%- include('partials/header.ejs') %>
+
+<% if (locals.title && locals.description) {%>
+    <h1 style="text-align: center;"><%= title %></h1>
+    <div class="container">
+        <p class="description"><%= description %> </p>
+    </div>
+<% } else { %>
+    <h1>This post not exist</h1>
+    <% } %>
+<%- include('partials/footer.ejs') %>

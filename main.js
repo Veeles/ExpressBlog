@@ -62,10 +62,10 @@ app.post('/edit', (req, res) => {
 })
 
 app.post('/edit/post', (req, res) => {
-    console.log(req.body)
-    let id = Number(req.body['editId']) + 1
-    let newTitle = req.body['title']
-    let newDescription = req.body['text']
+    console.log(req.body);
+    let id = Number(req.body['editId']) + 1;
+    let newTitle = req.body['title'];
+    let newDescription = req.body['text'];
 
     for (let post of posts){
         if (post.id == id){
@@ -73,8 +73,22 @@ app.post('/edit/post', (req, res) => {
             post.description = newDescription;
         }
     }
-    res.redirect('/')
-})
+    res.redirect('/');
+});
+
+app.get('/post/:id', (req, res) => {
+    let id = Number(req.params.id) - 1;
+    console.log('d')
+    console.log(id)
+    let title = posts[id]['title'];
+    console.log(title)
+    let description = posts[id]['description'];
+
+    console.log(id)
+    res.render('post.ejs', {title:title, description:description} );
+});
+
+
 
 app.listen(port, (err) => {
     if (err) console.log(err);
