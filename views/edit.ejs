@@ -1,0 +1,9 @@
+<%- include('partials/header.ejs') %>
+<h1 id="h1-edit">Edit Post</h1>
+<form id="edit-form" method="post" action="/edit/post">
+    <input name="title" type="text" class="editPost-input" placeholder="Title" value="<%=title%>">
+    <textarea name="text" class="editPost-input" placeholder="Description"><%=description%></textarea>
+    <input type="submit" name="edit" value="Edit">
+    <input type="hidden" name="editId" value="<%=id %>">
+</form>
+<%- include('partials/footer.ejs') %>

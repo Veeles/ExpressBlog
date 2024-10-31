@@ -1,3 +1,4 @@
+import { render } from 'ejs';
 import express from 'express';
 
 const app = express();
@@ -48,6 +49,31 @@ app.post('/post/delete', (req,res) => {
     posts.splice(id)
     res.redirect('/')
     
+})
+
+app.post('/edit', (req, res) => {
+    let id = req.body['updateButton'] - 1
+    console.log(posts[id]['title'])
+    let title = posts[id]['title']
+    let description = posts[id]['description']
+    res.render('edit.ejs', {title: title, description: description, id: id})
+
+
+})
+
+app.post('/edit/post', (req, res) => {
+    console.log(req.body)
+    let id = Number(req.body['editId']) + 1
+    let newTitle = req.body['title']
+    let newDescription = req.body['text']
+
+    for (let post of posts){
+        if (post.id == id){
+            post.title = newTitle;
+            post.description = newDescription;
+        }
+    }
+    res.redirect('/')
 })
 
 app.listen(port, (err) => {

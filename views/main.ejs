@@ -16,7 +16,7 @@
                 
                 <h3 style="margin-top: 10px; "><%=posts[i]['title'] %></h3>
                 <p><%= posts[i]['description'].slice(0,100) %> ...</p>
-                <form class="button" action="/test" method="post">
+                <form class="button" action="/edit" method="post">
                     <button id="edit_button" value="<%= posts[i]['id']%>" name="updateButton">Update</button>
                 </form>
                 <form class="button" action="/post/delete" method="post">    
