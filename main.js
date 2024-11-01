@@ -78,13 +78,8 @@ app.post('/edit/post', (req, res) => {
 
 app.get('/post/:id', (req, res) => {
     let id = Number(req.params.id) - 1;
-    console.log('d')
-    console.log(id)
     let title = posts[id]['title'];
-    console.log(title)
     let description = posts[id]['description'];
-
-    console.log(id)
     res.render('post.ejs', {title:title, description:description} );
 });
 

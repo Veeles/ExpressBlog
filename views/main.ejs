@@ -15,7 +15,7 @@
                     for(i=0;i < posts.length; i++) {%>
                 <a href="post/<%= posts[i]['id']%>">
                 <h3 style="margin-top: 10px; "><%=posts[i]['title'] %></h3>
-                <p><%= posts[i]['description'].slice(0,100) %> ...</p>
+                <p><%= posts[i]['description'].slice(0,50) %> ...</p>
                 </a>
                 <form class="button" action="/edit" method="post">
                     <button id="edit_button" value="<%= posts[i]['id']%>" name="updateButton">Update</button>
@@ -34,6 +34,8 @@
 
             </div>
         </div>
+    </div>
+    <div class="body">
     </div>
     
    
